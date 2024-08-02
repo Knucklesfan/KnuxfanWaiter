@@ -38,5 +38,6 @@ Transition clockscene::endLogic() {
 
 };
 void clockscene::reset() {
+    age = SDL_GetTicks64();
     backnum = std::rand() % graphics::backgrounds->size();
 }
