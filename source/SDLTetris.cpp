@@ -53,9 +53,12 @@ bool getLid() {
   std::ifstream myfile ("/proc/acpi/button/lid/LID0/state");
   if (myfile.is_open())
   {
-    getline (myfile,line);
-    std::cout << line << '\n';
+    getline(myfile,line);
     myfile.close();
+    std::cout << line << '\n';
+    if(line.find("open") != std::string::npos) {
+        return true;
+    }
   }
   return false;
 }
@@ -386,7 +389,7 @@ int main(int argc, char **argv) {
             lastTime = SDL_GetTicks64();
         }
         else { //otherwise, if it aint broke dont fix it
-            getLid();
+            std::cout << getLid() <<"\n";
             if(!lidOpen) {
 
             }
