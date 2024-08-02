@@ -12,7 +12,6 @@
 #include "gamemode.h"
 #include "scenes/debugscene.h"
 #include "opengl/sota.h"
-#include <unistd.h>
 // #include "scenes/options.h"
 #ifndef __LEGACY_RENDER
 #include "opengl/buffermanager.h"
@@ -399,8 +398,6 @@ int main(int argc, char **argv) {
 
 	// And quit SDL
 	SDL_Quit();
-    char *args[]={"startxfce4",NULL};
-    execvp(args[0],args);
     return exitcode;
 
 }
