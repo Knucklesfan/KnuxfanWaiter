@@ -809,18 +809,18 @@ bg::bg(std::string path, bool folder) {
 
 void bg::render() {
     //BACKGROUND.H RETURNS!!!
-    buffer->enable();
+    // buffer->enable();
     for(int i = 0; i < layers.size(); i++) {
         layers[i]->render();
     }
-    buffer->disable(848,480,true);
-    if(postprocess) {
+    // buffer->disable(848,480,true);
+    // if(postprocess) {
 
-        postproc->render();
-    }
-    else {
-        buffer->render(graphics::shaders[3],0,0,false);
-    }
+    //     postproc->render();
+    // }
+    // else {
+    //     buffer->render(graphics::shaders[3],0,0,false);
+    // }
 }
 void bg::logic(double deltatime)
 {
