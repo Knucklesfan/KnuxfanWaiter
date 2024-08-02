@@ -386,6 +386,7 @@ int main(int argc, char **argv) {
             lastTime = SDL_GetTicks64();
         }
         else { //otherwise, if it aint broke dont fix it
+            getLid();
             if(!lidOpen) {
 
             }
