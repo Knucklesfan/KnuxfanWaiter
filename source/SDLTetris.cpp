@@ -112,7 +112,7 @@ void doGameRender() {
 
     #else
 
-    graphics::fonts->at(2)->render(16, 16, std::to_string(tFPS), false);
+    // graphics::fonts->at(2)->render(16, 16, std::to_string(tFPS), false);
     int txtpos = fmod(SDL_GetTicks64()/5.0,networking::news.length()*16);
     std::string toprint = networking::news.substr(txtpos/16, (848/16)+1);
     if((txtpos/16)+(848/16)+1 > networking::news.length()) {
