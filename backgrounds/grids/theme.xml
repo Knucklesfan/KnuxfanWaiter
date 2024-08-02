@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<background>
+   <head>
+      <title>Grid</title>
+      <version>Grid</version>
+      <creator>Knuxfan</creator>
+      <music visualize="false">
+         <title>Tetris Remix</title>
+         <creator>l.restifo@pcg.it</creator>
+         <filename>song.xm</filename>
+      </music>
+   </head>
+   <layers>
+      <layer type="legacy">
+         <filename>00.png</filename>
+         <movement>
+            <x>25</x>
+            <y>25</y>
+         </movement>
+      </layer>
+      <layer type="legacy">
+         <filename>01.png</filename>
+         <movement>
+            <x>50</x>
+            <y>50</y>
+         </movement>
+      </layer>
+      <layer type="legacy">
+         <filename>02.png</filename>
+         <movement>
+            <x>75</x>
+            <y>75</y>
+         </movement>
+      </layer>
+      <layer type="legacy">
+         <filename>03.png</filename>
+         <movement>
+            <x>100</x>
+            <y>100</y>
+         </movement>
+      </layer>
+   </layers>
+</background>

@@ -1,0 +1,31 @@
+<fonts>
+	<font>
+		<type>pixfont</type>
+		<path>8x8font</path>
+	</font>
+	<font>
+		<type>pixfont</type>
+		<path>8x16font</path>
+	</font>
+	<font>
+		<type>pixfont</type>
+		<path>small8x8font</path>
+	</font>
+	<font>
+		<type>ttffont</type>
+		<path>freesans</path>
+	</font>
+	<font>
+		<type>pixfont</type>
+		<path>knfnfont32</path>
+	</font>
+	<font>
+		<type>pixfont</type>
+		<path>scorefont</path>
+	</font>
+	<font>
+		<type>pixfont</type>
+		<path>dialoguefont</path>
+	</font>
+
+</fonts>

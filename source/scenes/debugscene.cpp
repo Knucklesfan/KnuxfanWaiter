@@ -1,0 +1,165 @@
+#include "debugscene.h"
+debugscene::debugscene() {
+    memset(starX, 0, sizeof(starX));
+    memset(starY, 0, sizeof(starY)); //clear out the coordinates for the stars
+    memset(starZ, 0, sizeof(starZ));
+    memset(starBlock, 0, sizeof(starBlock));
+
+    for(int i = 0; i < 255; i++) {
+        starX[i] = (rand() % 848) - 424;
+        starY[i] = (rand() % 480) - 240;
+        starZ[i] = (rand() % 1700) - 100;
+        starBlock[i] = (rand() % 7);
+
+    }
+
+}
+void debugscene::render()
+{
+        #ifdef __LEGACY_RENDER
+        SDL_SetRenderDrawColor(graphics::render,r,g,b,255);
+        SDL_RenderClear(graphics::render);
+        SDL_SetRenderDrawColor(graphics::render,0,0,0,255);
+        graphics::fonts->at(2)->render(16,16,"Currently selected transition: "+transitions[transition],false);
+        graphics::fonts->at(2)->render(16,32,"Left decreases Right increases",false);
+        #else
+        if(background > 0) {
+            graphics::backgrounds->at(background-1).render();
+        }
+        else {
+            graphics::sprite->render(graphics::shaders.at(4),graphics::sprites.at("cheatercroc"),{0,0},{848,480},0,{0,0},{848,480});
+            glEnable(GL_DEPTH_TEST);
+            for(int i = 0; i < 255; i++) {
+                float perspective = 300.0 / (300.0 - starZ[i]);
+                int x = 424 + starX[i] * perspective;
+                int y = 240 + starY[i] * perspective;
+
+                starZ[i] += 2;
+                if (starZ[i] > 300) {
+                    starX[i] = (rand() % 848) - 424;
+                    starY[i] = (rand() % 480) - 240;
+
+                    starZ[i] -= 600;
+                }
+                graphics::sprite->render(graphics::shaders.at(4),graphics::blocks->at(starBlock[i]),{x,y},{16*(perspective / 2),16*(perspective / 2)},{0,0,starZ[i]*4},{0,0},{16,16},{848,480},(perspective / 2));            
+            }
+            glDisable(GL_DEPTH_TEST);
+        }
+
+        graphics::fonts->at(1)->render(424,60,"WELCOME TO",true);
+        graphics::fonts->at(1)->render(424,120,"KNUXFANS HOUSE DEBUG SCREEN",true,((int)(SDL_GetTicks()/100.0)%3==0)*255,((int)(SDL_GetTicks()/100.0)%3==1)*255,((int)(SDL_GetTicks()/100.0)%3==2)*255,-1,true,SDL_GetTicks()/1000.0,10,10);
+        for(int i = 0; i<MENUSIZE; i++) {
+            std::string text = menu[i];
+            if(endings[i] != nullptr) {
+                text.append(std::to_string(*(endings[i])));
+            }
+            if(i == 2) {
+                text.append((gameplay::gamemodes.at(gamemode)->name));
+            }
+            graphics::fonts->at(0)->render(424,200+(i*24),text,true,255,selection==i?0:255,255,-1,false,0,0,0);
+        }
+        graphics::sprite->render(graphics::shaders.at(4),graphics::sprites.at("kekcrochurryup"),{16,432},{16,32},0,{(SDL_GetTicks()/1000)%2==1?0:16,0},{16,32});
+        graphics::sprite->render(graphics::shaders.at(4),graphics::sprites.at("mariospin"),{16,400},{16,32},0,{((SDL_GetTicks()/250)%4)*16,0},{16,32});
+
+        if(SDL_GetTicks()-messagelife > 1000 && currentmessage < 42) {
+            graphics::fonts->at(6)->render(32,432-(messageSenders[currentmessage]*32),kekcrocMessages[currentmessage],false);
+        }
+
+        #endif
+
+    }
+
+void debugscene::input(SDL_Keycode keysym)
+{
+    switch(keysym) {
+        case SDLK_RIGHT: {
+            switch(selection) {
+                case 0: {
+                    if(background < graphics::backgrounds->size()) {
+                        background++;
+                    }
+
+                }break;
+                case 1: {
+                    if(transition < 3) {
+                        transition++;
+                    }
+                }break;
+                case 2: {
+                    if(gamemode < gameplay::gamemodes.size()-1) {
+                        gamemode++;
+                    }
+                }break;
+
+            }
+            break;
+        }
+        case SDLK_LEFT: {
+            switch(selection) {
+                case 0: {
+                    if(background > 0) {
+                        background--;
+                    }
+
+                }break;
+                case 1: {
+                    if(transition > 0) {
+                        transition--;
+                    }
+                }break;
+                case 2: {
+                    if(gamemode > 0) {
+                        gamemode--;
+                    }
+                }break;
+
+            }
+            break;
+        }
+            case SDLK_UP: {
+            if(selection > 0) {
+                selection--;
+            }
+            break;
+        }
+        case SDLK_DOWN: {
+            if(selection < MENUSIZE-1) {
+                selection++;
+            }
+            break;
+        }
+
+        case SDLK_z: {
+            if(!advance) {
+                advance = true;
+            }
+        }
+    }
+}
+Transition debugscene::endLogic()
+{
+    return {
+        0.001,
+        gamemode,
+        424,240,
+        (FADETYPE)transition,
+        advance
+    };
+};
+void debugscene::logic(double deltatime) {
+    if(SDL_GetTicks()-messagelife > 5000) {
+        messagelife = SDL_GetTicks();
+        currentmessage++;
+    }
+    if(background > 0) {
+        graphics::backgrounds->at(background-1).logic(deltatime);
+    }
+}
+void debugscene::reset() {
+    advance = false;
+
+    r = 128 + rand() % (256 - 128);
+    g = 128 + rand() % (256 - 128);
+    b = 128 + rand() % (256 - 128);
+
+}

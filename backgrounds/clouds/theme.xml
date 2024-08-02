@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<background>
+   <head>
+      <title>Clouds</title>
+      <version>Clouds</version>
+      <creator>Knuxfan</creator>
+      <music visualize="false">
+         <title>Jump Around</title>
+         <creator>Mikael Eriksson</creator>
+         <filename>song.mod</filename>
+      </music>
+   </head>
+   <layers>
+      <layer type="static">
+         <filename>00.png</filename>
+      </layer>
+      <layer type="legacy">
+         <filename>01.png</filename>
+         <movement>
+            <x>25</x>
+            <y>0</y>
+         </movement>
+      </layer>
+   </layers>
+</background>

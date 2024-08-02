@@ -1,0 +1,84 @@
+<sprites>
+	<sprite>
+	    <name>bblock</name>
+	    <path>./sprites/bblock.png</path>
+	</sprite>
+	
+	<sprite>
+	    <name>bigstage</name>
+	    <path>./sprites/bigstage.png</path>
+	</sprite>
+	
+	<sprite>
+	    <name>hold</name>
+	    <path>./sprites/hold.png</path>
+	</sprite>
+	
+	<sprite>
+	    <name>knfnlogo</name>
+	    <path>./sprites/knfnlogo.png</path>
+	</sprite>
+	
+	<sprite>
+	    <name>knfnpres</name>
+	    <path>./sprites/knfnpres.png</path>
+	</sprite>
+	
+	<sprite>
+	    <name>mblock</name>
+	    <path>./sprites/mblock.png</path>
+	</sprite>
+	
+	<sprite>
+	    <name>pblock</name>
+	    <path>./sprites/pblock.png</path>
+	</sprite>
+	
+	<sprite>
+	    <name>rblock</name>
+	    <path>./sprites/rblock.png</path>
+	</sprite>
+	<sprite>
+	    <name>tblock</name>
+	    <path>./sprites/tblock.png</path>
+	</sprite>
+	<sprite>
+	    <name>yblock</name>
+	    <path>./sprites/yblock.png</path>
+	</sprite>
+	<sprite>
+	    <name>gblock</name>
+	    <path>./sprites/gblock.png</path>
+	</sprite>
+
+	<sprite>
+		<name>knuxfan</name>
+		<path>./sprites/knuxfan.png</path>
+	</sprite>
+	<sprite>
+		<name>presents</name>
+		<path>./sprites/presents.png</path>
+	</sprite>
+	<sprite>
+		<name>homophobicdog</name>
+		<path>./sprites/homophobicdog.jpg</path>
+	</sprite>
+	<sprite>
+		<name>normalbrick</name>
+		<path>./sprites/normal_mapping_normal_map.png</path>
+	</sprite>
+
+	<sprite>
+		<name>currentweatheroutline</name>
+		<path>./sprites/currentweatheroutline.png</path>
+	</sprite>
+	<sprite>
+		<name>firstmenubackground</name>
+		<path>./sprites/firstmenubackground.png</path>
+	</sprite>
+	<sprite>
+		<name>weathericons</name>
+		<path>./sprites/weathericons.png</path>
+	</sprite>
+
+</sprites>

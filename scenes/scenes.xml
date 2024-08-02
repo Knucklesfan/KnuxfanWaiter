@@ -1,0 +1,17 @@
+ 
+<scenes>
+    <scene> <!--0-->
+        <name>clock</name>
+        <type>clock</type>
+    </scene>
+    <scene> <!--0-->
+        <name>Knuxfan Screen</name>
+        <type>weather</type>
+    </scene>
+    <scene> <!--1-->
+        <name>Main Menu</name>
+        <type>mainmenu</type>
+    </scene>
+
+
+</scenes>

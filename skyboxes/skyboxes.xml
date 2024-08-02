@@ -1,0 +1,19 @@
+<skyboxes>
+    <skybox>
+        <top>skyboxes/beachgrid/beachgridskybox_top.png</top>
+        <front>skyboxes/beachgrid/beachgridskybox_front.png</front>
+        <back>skyboxes/beachgrid/beachgridskybox_back.png</back>
+        <left>skyboxes/beachgrid/beachgridskybox_left.png</left>
+        <right>skyboxes/beachgrid/beachgridskybox_right.png</right>
+        <bottom>skyboxes/beachgrid/beachgridskybox_bottom.png</bottom>
+    </skybox>
+    <skybox>
+        <top>skyboxes/mario64water/water_up.png</top>
+        <front>skyboxes/mario64water/water_front.png</front>
+        <back>skyboxes/mario64water/water_back.png</back>
+        <left>skyboxes/mario64water/water_left.png</left>
+        <right>skyboxes/mario64water/water_right.png</right>
+        <bottom>skyboxes/mario64water/water_down.png</bottom>
+    </skybox>
+
+</skyboxes>

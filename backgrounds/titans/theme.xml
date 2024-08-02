@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<background>
+   <head>
+      <title>Titans</title>
+      <version>Titans</version>
+      <creator>kris_0520</creator>
+      <music visualize="false">
+         <title>Titans</title>
+         <creator>kris_0520</creator>
+         <filename>Titans.xm</filename>
+      </music>
+   </head>
+   <layers>
+      <layer type="legacy">
+         <filename>00.png</filename>
+         <movement>
+            <x>0</x>
+            <y>5</y>
+         </movement>
+      </layer>
+   </layers>
+</background>

@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<background>
+   <head>
+      <title>Cave Story BG</title>
+      <version>Cave Story BG</version>
+      <creator>Knuxfan</creator>
+      <music visualize="false">
+         <title>Take on Me Chipedit</title>
+         <creator>Zalza of Tequila</creator>
+         <filename>song.xm</filename>
+      </music>
+   </head>
+   <layers>
+      <layer type="legacy">
+         <filename>00.png</filename>
+         <movement>
+            <x>5</x>
+            <y>0</y>
+         </movement>
+      </layer>
+      <layer type="legacy">
+         <filename>01.png</filename>
+         <movement>
+            <x>10</x>
+            <y>0</y>
+         </movement>
+      </layer>
+      <layer type="legacy">
+         <filename>02.png</filename>
+         <movement>
+            <x>15</x>
+            <y>0</y>
+         </movement>
+      </layer>
+      <layer type="legacy">
+         <filename>03.png</filename>
+         <movement>
+            <x>20</x>
+            <y>0</y>
+         </movement>
+      </layer>
+      <layer type="static">
+         <filename>04.png</filename>
+      </layer>
+   </layers>
+</background>
