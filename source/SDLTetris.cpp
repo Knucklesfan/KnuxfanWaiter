@@ -12,6 +12,8 @@
 #include "gamemode.h"
 #include "scenes/debugscene.h"
 #include "opengl/sota.h"
+#include <chrono>
+#include <thread>
 // #include "scenes/options.h"
 #ifndef __LEGACY_RENDER
 #include "opengl/buffermanager.h"
@@ -389,18 +391,19 @@ int main(int argc, char **argv) {
             lastTime = SDL_GetTicks64();
         }
         else { //otherwise, if it aint broke dont fix it
-            std::cout << getLid() <<"\n";
-            if(!lidOpen) {
+            if(getLid()) {
+                NOW = SDL_GetTicks64();
+                graphics::deltaTime = (NOW - LAST); //frameTime is the time this frame has taken, in seconds
+                double frameTime = graphics::deltaTime /1000.0;
+                tFPS = (1.0 / frameTime);
+                LAST = NOW;
 
+                doGameLogic();
+                doGameRender();
             }
-            NOW = SDL_GetTicks64();
-            graphics::deltaTime = (NOW - LAST); //frameTime is the time this frame has taken, in seconds
-            double frameTime = graphics::deltaTime /1000.0;
-            tFPS = (1.0 / frameTime);
-            LAST = NOW;
-
-            doGameLogic();
-            doGameRender();
+            else {
+                std::this_thread::sleep_for(std::chrono::seconds(5)); //sleeps this thread for 5 seconds, we don't need to wake up all that quickly.
+            }
 
         }
 
