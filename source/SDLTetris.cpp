@@ -361,7 +361,7 @@ int main(int argc, char **argv) {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         #endif
-        if(true) { //if we should use the precise timing, then we can go ahead and use the new algorithm
+        if(settings::usePreciseTiming) { //if we should use the precise timing, then we can go ahead and use the new algorithm
             totalMS += SDL_GetTicks64() - lastTime;
             if (totalMS > 1000.0/60.0) {
                 totalMS -= 1000.0/60.0;
@@ -378,7 +378,7 @@ int main(int argc, char **argv) {
             lastTime = SDL_GetTicks64();
         }
         else { //otherwise, if it aint broke dont fix it
-            NOW = ((1000.0f * (double)SDL_GetPerformanceCounter()) / SDL_GetPerformanceFrequency());
+            NOW = SDL_GetTicks64();
             graphics::deltaTime = (NOW - LAST); //frameTime is the time this frame has taken, in seconds
             double frameTime = graphics::deltaTime /1000.0;
             tFPS = (1.0 / frameTime);
