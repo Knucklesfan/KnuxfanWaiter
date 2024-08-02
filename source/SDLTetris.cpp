@@ -119,7 +119,7 @@ void doGameRender() {
         toprint = networking::news.substr(txtpos/16)+networking::news.substr(0,(txtpos/16)-(848/16)-1);
     }
     graphics::fonts->at(0)->render(-txtpos%16, 0, toprint, false);
-    graphics::fonts->at(0)->render(424, 480-16, "PRESS ENTER TO BOOT TO A REAL DESKTOP", false);
+    graphics::fonts->at(0)->render(424, 480-16, "PRESS ENTER TO BOOT TO A REAL DESKTOP", true);
 
     graphics::globalbuffer->disable(WINDOW_WIDTH,WINDOW_HEIGHT);
     graphics::globalbuffer->render(graphics::shaders[3],WINDOW_WIDTH,WINDOW_HEIGHT,true);
