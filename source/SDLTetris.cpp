@@ -222,7 +222,7 @@ int main(int argc, char **argv) {
 
 	// Create an OpenGL context (so we can use OpenGL functions)
 	SDL_GLContext context = SDL_GL_CreateContext(graphics::window);
-
+    SDL_ShowCursor(false);
 	// if we failed to create a context
 	if (!context) {
 		// we'll print out an error message and exit
