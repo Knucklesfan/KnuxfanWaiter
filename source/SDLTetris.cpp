@@ -362,7 +362,7 @@ int main(int argc, char **argv) {
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         #endif
-        if(settings::usePreciseTiming) { //if we should use the precise timing, then we can go ahead and use the new algorithm
+        if(true) { //if we should use the precise timing, then we can go ahead and use the new algorithm
             totalMS += SDL_GetTicks64() - lastTime;
             if (totalMS > 1000.0/60.0) {
                 totalMS -= 1000.0/60.0;
