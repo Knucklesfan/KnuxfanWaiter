@@ -49,7 +49,17 @@ unfinished but soon to be finished!
 
 */
 #undef main
-
+bool getLid() {
+  std::string line;
+  std::ifstream myfile ("/proc/acpi/button/lid/LID0/state");
+  if (myfile.is_open())
+  {
+    getline (myfile,line);
+    std::cout << line << '\n';
+    myfile.close();
+  }
+  return false;
+}
 GlobalGamemode* global; //making this a global variable because... well, it's a global gamemode that runs constantly.
 void preciseSleep(double seconds) {
     static double estimate = 5e-3;
@@ -353,7 +363,7 @@ int main(int argc, char **argv) {
         		}
 			}
         }
-
+        
         SDL_PumpEvents();
         #ifdef __LEGACY_RENDER
         SDL_RenderClear(graphics::render);
@@ -379,6 +389,9 @@ int main(int argc, char **argv) {
             lastTime = SDL_GetTicks64();
         }
         else { //otherwise, if it aint broke dont fix it
+            if(!lidOpen) {
+
+            }
             NOW = SDL_GetTicks64();
             graphics::deltaTime = (NOW - LAST); //frameTime is the time this frame has taken, in seconds
             double frameTime = graphics::deltaTime /1000.0;
