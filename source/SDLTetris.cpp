@@ -31,8 +31,7 @@ int WINDOW_WIDTH = INTERNAL_WIDTH;
 int WINDOW_HEIGHT = INTERNAL_HEIGHT;
 float tFPS = 0;
 //TODO: ALL NETCODE HAS BEEN DISABLED
-int exitcode = 1; //the code to exit with, if 1 exit and reboot, if 0 exit and run the desktop
-
+bool lidOpen = true;
 //i did this for a number of reasons:
 // 1. I don't have the server code working just yet
 // 2. I want to make a release and as such including an unfinished, unsafe server in the code is a bad idea to send to people
@@ -340,7 +339,6 @@ int main(int argc, char **argv) {
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
                 quit = true;
-                exitcode = 1;
             }
             if (event.type == SDL_KEYDOWN) {
                 if(event.key.keysym.sym == SDLK_F12) {
@@ -349,7 +347,6 @@ int main(int argc, char **argv) {
                 }
                 if(event.key.keysym.sym == SDLK_RETURN) {
                     quit = true;
-                    exitcode = 69;
 
                     break;
                 }
@@ -411,6 +408,6 @@ int main(int argc, char **argv) {
 
 	// And quit SDL
 	SDL_Quit();
-    return exitcode;
+    return 0;
 
 }
