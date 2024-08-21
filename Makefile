@@ -657,6 +657,30 @@ source/scenes/mainmenu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/source/scenes/mainmenu.cpp.s
 .PHONY : source/scenes/mainmenu.cpp.s
 
+source/scenes/solitaire.o: source/scenes/solitaire.cpp.o
+.PHONY : source/scenes/solitaire.o
+
+# target to build an object file
+source/scenes/solitaire.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/source/scenes/solitaire.cpp.o
+.PHONY : source/scenes/solitaire.cpp.o
+
+source/scenes/solitaire.i: source/scenes/solitaire.cpp.i
+.PHONY : source/scenes/solitaire.i
+
+# target to preprocess a source file
+source/scenes/solitaire.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/source/scenes/solitaire.cpp.i
+.PHONY : source/scenes/solitaire.cpp.i
+
+source/scenes/solitaire.s: source/scenes/solitaire.cpp.s
+.PHONY : source/scenes/solitaire.s
+
+# target to generate assembly for a file
+source/scenes/solitaire.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/source/scenes/solitaire.cpp.s
+.PHONY : source/scenes/solitaire.cpp.s
+
 source/scenes/weather.o: source/scenes/weather.cpp.o
 .PHONY : source/scenes/weather.o
 
@@ -876,6 +900,9 @@ help:
 	@echo "... source/scenes/mainmenu.o"
 	@echo "... source/scenes/mainmenu.i"
 	@echo "... source/scenes/mainmenu.s"
+	@echo "... source/scenes/solitaire.o"
+	@echo "... source/scenes/solitaire.i"
+	@echo "... source/scenes/solitaire.s"
 	@echo "... source/scenes/weather.o"
 	@echo "... source/scenes/weather.i"
 	@echo "... source/scenes/weather.s"

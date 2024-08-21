@@ -80,5 +80,25 @@
 		<name>weathericons</name>
 		<path>./sprites/weathericons.png</path>
 	</sprite>
+	<sprite>
+		<name>logos_1</name>
+		<path>/opt/knuxfanwaiter/dvdlogo.png</path>
+	</sprite>
+	<sprite>
+		<name>logos_2</name>
+		<path>/opt/knuxfanwaiter/dominos.png</path>
+	</sprite>
+	<sprite>
+		<name>logos_3</name>
+		<path>/opt/knuxfanwaiter/ford.png</path>
+	</sprite>
+	<sprite>
+		<name>logos_4</name>
+		<path>/opt/knuxfanwaiter/youtube.png</path>
+	</sprite>
+	<sprite>
+		<name>logos_5</name>
+		<path>/opt/knuxfanwaiter/burgerking.png</path>
+	</sprite>
 
 </sprites>

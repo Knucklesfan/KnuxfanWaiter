@@ -1,5 +1,9 @@
  
 <scenes>
+    <scene> <!--1-->
+        <name>Solitaire</name>
+        <type>solitaire</type>
+    </scene>
     <scene> <!--0-->
         <name>clock</name>
         <type>clock</type>

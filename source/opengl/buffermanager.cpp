@@ -61,14 +61,16 @@ buffermanager::buffermanager(int w, int h,bool alpha):width(w),height(h) {
 	//end renderplane
 
 }
-void buffermanager::enable() {
+void buffermanager::enable(bool clear) {
 		glGetIntegerv(GL_FRAMEBUFFER_BINDING, &previousFB); //store previous framebuffer
 		glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
 		glViewport(0,0,width,height); // Activate and render at texture size.
 		glColorMask(1, 1, 1, 1);
-		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-		glClearDepth(1.0);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		if(clear) {
+			glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+			glClearDepth(1.0);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		}
 }
 void buffermanager::disable(int WINDOW_WIDTH, int WINDOW_HEIGHT, bool restore) {
 		if(restore) {

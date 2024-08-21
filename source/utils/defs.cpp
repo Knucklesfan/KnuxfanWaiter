@@ -11,10 +11,12 @@
 #include "../pixfont.h"
 #include "../ttffont.h"
 #include "../opengl/stb_image.h"
+
 #include "../scenes/knuxfanscreen.h"
 #include "../scenes/mainmenu.h"
 #include "../scenes/weather.h"
 #include "../scenes/clock.h"
+#include "../scenes/solitaire.h"
 
 #include <cmath>
 #include <sstream> //std::stringstream
@@ -1089,6 +1091,12 @@ void gameplay::loadGamemodes() {
         }
         else if(type == "clock") {
             clockscene* tmp = new clockscene();
+            tmp->name = name;
+            gamemodes.push_back(tmp);
+
+        }
+        else if(type == "solitaire") {
+            solitairescene* tmp = new solitairescene();
             tmp->name = name;
             gamemodes.push_back(tmp);
 
