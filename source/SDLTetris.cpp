@@ -193,8 +193,8 @@ int main(int argc, char **argv) {
     consoleInit(NULL);
 #endif // __SWITCH__
 
-        srand((unsigned)time(0));
-
+    srand((unsigned)time(0));
+    // SDL_SetHint(SDL_HINT_VIDEODRIVER, "wayland,x11");
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
         std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
         return 1;
@@ -355,7 +355,7 @@ int main(int argc, char **argv) {
 
                     break;
                 }
-                // gameplay::gamemodes[gameplay::gamemode]->input(event.key.keysym.sym);
+                gameplay::gamemodes[gameplay::gamemode]->input(event.key.keysym.sym);
             }
             if(event.type == SDL_WINDOWEVENT) {
 				if (event.window.event == SDL_WINDOWEVENT_RESIZED) {
@@ -391,7 +391,7 @@ int main(int argc, char **argv) {
             lastTime = SDL_GetTicks64();
         }
         else { //otherwise, if it aint broke dont fix it
-            if(getLid()) {
+            if(settings::globalDebug || getLid()) {
                 NOW = SDL_GetTicks64();
                 graphics::deltaTime = (NOW - LAST); //frameTime is the time this frame has taken, in seconds
                 double frameTime = graphics::deltaTime /1000.0;
